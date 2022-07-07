@@ -283,7 +283,7 @@ namespace ModularEncountersSystems.Behavior.Subsystems {
 				}
 				
 
-				if (authorColor != "White" && authorColor != "Red" && authorColor != "Green" && authorColor != "Blue") {
+				if (authorColor != "White" && authorColor != "Red" && authorColor != "Green" && authorColor != "Blue" && authorColor != "{PlayerRelation}") {
 
 					authorColor = "White";
 
