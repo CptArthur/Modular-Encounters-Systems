@@ -269,10 +269,11 @@ namespace ModularEncountersSystems.Behavior.Subsystems {
 
 				var authorColor = chat.Color;
 
-				var faction = MyAPIGateway.Session.Factions.TryGetFactionByTag(factionTag);
-				var factionId = faction.FactionId;
-				if (authorColor == "{PlayerRelation}")
-                {
+
+				if (authorColor == "{PlayerRelation}"){
+             
+					var faction = MyAPIGateway.Session.Factions.TryGetFactionByTag(factionTag);
+					var factionId = faction.FactionId;
 					var PlayerFactionRelation = MyAPIGateway.Session.Factions.GetReputationBetweenPlayerAndFaction(playerId, factionId);
 					if(PlayerFactionRelation>=-1500 && PlayerFactionRelation <= -501)
 						authorColor = "Red";
@@ -283,7 +284,7 @@ namespace ModularEncountersSystems.Behavior.Subsystems {
 				}
 				
 
-				if (authorColor != "White" && authorColor != "Red" && authorColor != "Green" && authorColor != "Blue") {
+				if (authorColor != "White" && authorColor != "Red" && authorColor != "Green" && authorColor != "Blue" && authorColor != "{PlayerRelation}") {
 
 					authorColor = "White";
 
