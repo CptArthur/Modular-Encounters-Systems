@@ -45,17 +45,17 @@ namespace ModularEncountersSystems.Events {
 			{
 				//Check if MainEvent is on
 				if (!MainEvent.Value.Active)
-					break;
+					continue;
 
 				for (int i = 0; i < MainEvent.Value.Events.Count; i++)
 				{
 					//Did the event already happen once? && Is the event a unique event?
 					if (MainEvent.Value.Events[i].Happend > 0 && MainEvent.Value.Events[i].UniqueEvent == true)
-						break;
+						continue;
 
 					//Check Conditions
 					if (!EventCondition.AreConditionsMet(MainEvent.Value, MainEvent.Value.Events[i].Conditions))
-						break;
+						continue;
 
 
 					//Check Cooldowns
